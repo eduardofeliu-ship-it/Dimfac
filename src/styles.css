@@ -1,0 +1,95 @@
+:root {
+  --cream: #F4F1EA;
+  --cream-2: #ECE7DB;
+  --navy: #0E1A2E;
+  --navy-2: #0F2A4D;
+  --gold: #B8862F;
+  --gold-soft: #E8D9B0;
+  --ink: #1A2433;
+  --muted: #6B7280;
+  --line: #D9D2C4;
+  --ok: #2F7D4F;
+  --warn: #B85C2F;
+  --bad: #A83232;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(14,26,46,.08), 0 8px 24px rgba(14,26,46,.06);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--cream); color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif; font-size: 14px; line-height: 1.5;
+}
+.mono { font-family: 'IBM Plex Mono', monospace; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -.01em; margin: 0; }
+
+.app { max-width: 1080px; margin: 0 auto; padding: 24px 20px 80px; }
+.topbar { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand h1 { font-size: 26px; color: var(--navy); }
+.brand .dot { color: var(--gold); }
+.eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+
+.steps { display: flex; gap: 6px; margin-bottom: 22px; flex-wrap: wrap; }
+.step { font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: transparent; cursor: pointer; }
+.step.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+.step .n { color: var(--gold); margin-right: 6px; }
+.step.active .n { color: var(--gold-soft); }
+
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); margin-bottom: 18px; }
+.card h2 { font-size: 18px; color: var(--navy); margin-bottom: 4px; }
+.card .sub { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+
+.grid { display: grid; gap: 14px; }
+.grid.c2 { grid-template-columns: repeat(2, 1fr); }
+.grid.c3 { grid-template-columns: repeat(3, 1fr); }
+.grid.c4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 720px) { .grid.c2, .grid.c3, .grid.c4 { grid-template-columns: 1fr; } }
+
+label { display: block; font-size: 12px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+input, select { width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--cream); font-family: inherit; font-size: 14px; color: var(--ink); }
+input:focus, select:focus { outline: 2px solid var(--gold-soft); border-color: var(--gold); }
+input.mono { font-family: 'IBM Plex Mono', monospace; }
+
+.toggle { display: flex; gap: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.toggle button { flex: 1; padding: 12px; border: none; background: var(--cream); cursor: pointer; font-family: inherit; font-size: 14px; color: var(--muted); }
+.toggle button.on { background: var(--navy); color: var(--cream); }
+
+.btn { padding: 10px 18px; border-radius: 8px; border: 1px solid var(--navy); background: var(--navy); color: var(--cream); font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--navy); }
+.btn.gold { background: var(--gold); border-color: var(--gold); color: #fff; }
+.btn.sm { padding: 6px 12px; font-size: 13px; }
+.btn:hover { filter: brightness(1.06); }
+
+.pav { border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 14px; background: var(--cream); }
+.pav-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.amb-row { display: grid; grid-template-columns: 1.6fr .8fr .6fr 1fr auto; gap: 8px; align-items: end; margin-bottom: 8px; }
+@media (max-width: 720px) { .amb-row { grid-template-columns: 1fr 1fr; } }
+.x { border: none; background: transparent; color: var(--bad); cursor: pointer; font-size: 18px; padding: 8px; }
+
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+@media (max-width: 720px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+.kpi { background: var(--navy); color: var(--cream); border-radius: 10px; padding: 18px; }
+.kpi .v { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 600; line-height: 1; }
+.kpi .l { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-soft); margin-top: 8px; }
+.kpi.alt { background: #fff; color: var(--navy); border: 1px solid var(--line); }
+.kpi.alt .l { color: var(--gold); }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line); }
+td { padding: 9px 10px; border-bottom: 1px solid var(--cream-2); }
+tr:last-child td { border-bottom: none; }
+.tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 2px 8px; border-radius: 999px; display: inline-block; }
+.tag.down { background: #fbeae3; color: var(--warn); }
+.tag.ok { background: #e7f1ea; color: var(--ok); }
+.tag.def { background: #f7e6e6; color: var(--bad); }
+
+.pop { border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 12px; background: #fff; }
+.pop h3 { font-size: 15px; color: var(--navy); }
+.pop .meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: .08em; margin: 4px 0 10px; }
+.pop ol { margin: 8px 0 0; padding-left: 18px; }
+.pop li { margin-bottom: 4px; }
+.pop [contenteditable] { outline: none; }
+.pop [contenteditable]:focus { background: var(--cream); border-radius: 4px; }
+.chip { display: inline-block; background: var(--cream-2); border-radius: 6px; padding: 2px 8px; margin: 2px 4px 2px 0; font-size: 12px; }
+.hint { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.right { text-align: right; }
