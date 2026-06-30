@@ -93,3 +93,12 @@ tr:last-child td { border-bottom: none; }
 .chip { display: inline-block; background: var(--cream-2); border-radius: 6px; padding: 2px 8px; margin: 2px 4px 2px 0; font-size: 12px; }
 .hint { font-size: 12px; color: var(--muted); margin-top: 6px; }
 .right { text-align: right; }
+
+/* v1 additions */
+.center { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.muted { color: var(--muted); }
+.card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.subbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; box-shadow: var(--shadow); margin-bottom: 14px; }
+.badge { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; background: var(--gold-soft); color: var(--navy); padding: 2px 8px; border-radius: 999px; }
+textarea { width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--cream); font-family: inherit; font-size: 14px; color: var(--ink); resize: vertical; }
+textarea:focus { outline: 2px solid var(--gold-soft); border-color: var(--gold); }
